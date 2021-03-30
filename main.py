@@ -9,7 +9,7 @@ def f(n):
 
 def g():
     print('Hello, World')
-    return None
+    #return None
 
 result = f(50)
 
