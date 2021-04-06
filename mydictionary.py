@@ -15,7 +15,7 @@ d = {
 d = {
     "cheese": "peynir",
      "chicken": "tavuk",
-     StudentID: {"First Name": "Hüseyin", GPA: 3.75, courses_taken: ["MIS132", "MIS233"]},
+     "course": "ders",
      "car": "araba"
      }
 
