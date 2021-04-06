@@ -34,3 +34,10 @@ print(check)
 
 empty_string = ''
 print(empty_string, len(empty_string))
+
+
+mystring = 'I have spotted %d %s'
+count_animals = 2
+type_animals = "giraffes"
+
+print(mystring % (count_animals, type_animals))
