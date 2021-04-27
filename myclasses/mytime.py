@@ -17,15 +17,24 @@ class Time:
         seconds = minutes * 60 + self.second
         return seconds
 
+    def int_to_time(self, totalseconds):
+        minutes, seconds = divmod(totalseconds, 60)
+        hours, minutes = divmod(minutes, 60)
+        return Time(hours, minutes, seconds)
+
     def increment(self, seconds):
-        seconds = seconds + self.time_to_int()
-        self.int_to_time(seconds)
+        seconds = self.time_to_int() + seconds
+        return self.int_to_time(seconds)
 
-    def int_to_time(self, seconds):
-        minutes, self.second = divmod(seconds, 60)
-        self.hour, self.minute = divmod(minutes, 60)
+    def add_time(self, other):
+        seconds = self.time_to_int() + other.time_to_int()
+        return self.int_to_time(seconds)
 
-t = Time(12,20,00)
-print(t)
-totalseconds = t.increment(125)
-print(t)
+    # operator overloading
+    # + operator is overloaded (works for our new type)
+    def __add__(self, other):
+        # type-based dispatching
+        if isinstance(other, Time):
+            return self.add_time(other)
+        else:
+            return self.increment(other)
