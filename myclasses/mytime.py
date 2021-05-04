@@ -38,3 +38,6 @@ class Time:
             return self.add_time(other)
         else:
             return self.increment(other)
+
+    def __radd__(self, other):
+        return self.__add__(other)
