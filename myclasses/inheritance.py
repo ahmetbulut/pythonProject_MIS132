@@ -55,8 +55,10 @@ class Hand(Deck):
     # All other methods in Deck are inherited!
 
     # New behavior being added!
-    def very_new_method(self):
-        pass
+    def __lt__(self, other):
+        self.cards.sort()
+        other.cards.sort()
+        return self.cards[-1] < other.cards[-1]
 
 # Create your deck & shuffle it!
 mydeck = Deck()
@@ -65,6 +67,8 @@ mydeck.shuffle()
 # Deal cards to Player/s
 player1 = Hand(mydeck, 4)
 player2 = Hand(mydeck, 4)
+
+print(player1 > player2)
 
 # Print Player's Hand
 player1.pop_card()
