@@ -7,7 +7,3 @@ class MyTestCase(unittest.TestCase):
         print(t)
         totalseconds = t.increment(125)
         print(t)
-
-
-if __name__ == '__main__':
-    unittest.main()
